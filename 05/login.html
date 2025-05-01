@@ -1,15 +1,186 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-		<meta charset="UTF-8">
-		<title>로그인</title>
-  </head>
-  <body>
-	<form>
-    <fieldset>
-      <!-- Do it! 텍스트 필드와 비밀번호 필드가 있는 로그인 폼 만들기 -->
 
-    </fieldset>
+<head>
+  <meta charset="UTF-8">
+  <title>로그인</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #e9ecef;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 380px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+
+    form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+      color: #333;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="range"],
+    input[type="date"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .section {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .section strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    input[type="image"] {
+      margin-top: 15px;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    input[type="button"] {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <h2>로그인 & 주문 폼</h2>
+    <label for="userId">로그인 아이디</label>
+    <input type="text" name="userId" placeholder="아이디를 입력하세요">
+
+    <label for="userPw">비밀번호</label>
+    <input type="password" name="userPw" placeholder="비밀번호를 입력하세요">
+
+    <label for="keyword">검색어</label>
+    <input type="search" name="keyword" required placeholder="검색어를 입력하세요">
+
+    <label for="url">웹주소</label>
+    <input type="url" name="url">
+
+    <label for="email">이메일</label>
+    <input type="email" name="email">
+
+    <label for="tel">전화</label>
+    <input type="tel" name="tel">
+
+    <div class="section">
+      <strong>주문 상품 선택</strong>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="product" value="3kg"> 선물용 3kg</label>
+        <label>수량: <input type="number" name="q3kg"></label>
+        <label>슬라이더: <input type="range" name="r3kg"></label>
+
+        <label><input type="checkbox" name="product" value="5kg"> 선물용 5kg</label>
+        <label>수량: <input type="number" name="q5kg"></label>
+
+        <label><input type="checkbox" name="product" value="10kg"> 선물용 10kg</label>
+        <label>수량: <input type="number" name="q10kg"></label>
+      </div>
+    </div>
+
+    <div class="section">
+      <strong>포장 선택</strong>
+      <div class="radio-group">
+        <label><input type="radio" name="gift" value="yes"> 선물포장</label>
+        <label><input type="radio" name="gift" value="no"> 포장 안함</label>
+      </div>
+    </div>
+
+    <label for="recv_dt">배송날짜</label>
+    <input type="date" name="recv_dt"><br>
+    메모 : <textarea name="memo" rows="4" cols="40" placeholder="배송 메모를 입력하세요"></textarea><br>
+    선물선택 : <select name="gift2">
+      <option>3kg</option>
+      <option>5kg</option>
+
+      <input type="hidden" name="myname" value="kim">
+
+      <input type="image" src="images/login.png" alt="로그인 버튼" height="40">
   </form>
-  </body>
+
+  <script>
+    let hello = 100;
+  </script>
+  <input type="button" value="공지" onclick="alert(hello++)">
+</body>
+
 </html>
