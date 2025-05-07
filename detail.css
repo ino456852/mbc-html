@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #fdfdfd;
+    color: #222;
+}
+
+h1 {
+    color: #34495e;
+}
+
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+strong {
+    display: inline-block;
+    width: 80px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
