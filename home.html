@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoW 쇼핑몰</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.95);
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: white;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        main > p {
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #featured-products, #news {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        article {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            width: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid #e1e1e1;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.95);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">홈</a></li>
+                <li><a href="about.html">소개</a></li>
+                <li><a href="products.html">상품</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="register.html">회원가입</a></li>
+                <li><a href="cart.html">장바구니</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>WoW 쇼핑몰에 오신 것을 환영합니다!</h1>
+        <p>최고의 상품을 만나보세요.</p>
+        <section id="featured-products">
+            <h2>추천 상품</h2>
+            <div class="product-list">
+                <article class="product-card">
+                    <h3>신상품 1</h3>
+                    <p>39,000원</p>
+                </article>
+                <article class="product-card">
+                    <h3>신상품 2</h3>
+                    <p>49,000원</p>
+                </article>
+                <article class="product-card">
+                    <h3>신상품 3</h3>
+                    <p>59,000원</p>
+                </article>
+            </div>
+        </section>
+        <section id="news">
+            <h2>최신 뉴스</h2>
+            <article>
+                <h3>신상품 출시!</h3>
+                <p>새로운 상품이 입고되었습니다. 지금 확인하세요!</p>
+            </article>
+            <article>
+                <h3>특별 할인 이벤트</h3>
+                <p>이번 주말 동안 모든 상품에 대해 20% 할인!</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 WoW 쇼핑몰. All rights reserved.</p>
+        <p>연락처:010-1234-5678</p>
+        <p>이메일:ino1533@gmail.com</p>
+    </footer>
+</body>
+</html>
