@@ -7,6 +7,8 @@
     /* Do it! li 요소를 가로로 나란히 배치하기 */
     nav > ul {
       list-style:none;      
+      display:flex;       /* flex 속성으로 가로 배치 */
+      justify-content:space-between; /* 메뉴 간격 조정 */
     }
     a {
       text-decoration: none;
@@ -14,13 +16,19 @@
   </style>
 </head>
 <body>
-   <nav>
-     <ul>
+    <nav>
+      <ul>
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#">메뉴 2</a></li>
+        <li><a href="#">메뉴 3</a></li>
+        <li><a href="#">메뉴 4</a></li>
+      </ul>
+    </nav>
+    <ul>
       <li><a href="#">메뉴 1</a></li>
       <li><a href="#">메뉴 2</a></li>
       <li><a href="#">메뉴 3</a></li>
       <li><a href="#">메뉴 4</a></li>
-     </ul>
-   </nav>
+    </ul>
 </body>
 </html>
