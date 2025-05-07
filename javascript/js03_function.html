@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // function add(n1, n2) {
+        //     let n3 = n1 + n2; // n3는 지역변수
+        //     alert(n3); // n3는 지역변수이므로 add() 함수 안에서만 사용 가능
+        // }
+        // add(1, 2); // add() 함수 호출
+        // alert(n3); // n3는 지역변수이므로 add() 함수 밖에서 사용 불가
+
+        // 버튼을 누르면 gugudan(3) 호출
+        // gugudan(3)은 3단 구구단을 팝업으로 출력한다.
+        // gygydan()함수는 출력할 단을 파라미터로 받는다
+        // function gugudan(dan=2) { // 기본값을 2로 설정
+        //     let result = ""; // result는 지역변수
+        //     document.querySelector("#dan").value;
+        //     for (let i = 1; i <= 9; i++) {
+        //         result += dan + " * " + i + " = " + (dan * i) + "\n"; 
+        //     }
+        //     alert(result);
+        // }
+    </script>
+    <!-- <script>
+        var seed = 3; // 3의 배수를 만들자
+      
+        for (let i = 1; i <= 5; i++) {
+          var seed = 5;  // 재선언
+          var result = seed * i;;
+          console.log(result);
+        }
+        console.log("seed = " + seed); // seed = 5
+      </script> -->
+      <!-- <script>
+        function sum() {
+          let n = 10;
+          let result = 0;
+          for (let i = 1; i <= n; i++) {
+            result += i;
+          }
+          console.log(result);
+        }
+        sum();
+        console.log(result); // ReferenceError: result is not defined
+        // result는 지역변수이므로 sum() 함수 밖에서 사용 불가
+      </script> -->
+      <script>
+        // function addNumber(num1, num2){ 
+        //     alert(num1 +","+ num2); // 5
+        //   let sum = num1 + num2; 
+        //   return sum; 
+        // }
+        // let addNumber = function (num1, num2){ 
+        //     alert(num1 +","+ num2); // 5
+        //   let sum = num1 + num2; 
+        //   return sum; 
+        // }
+        // let result = addNumber(2);
+        // document.write(`두 수를 더 한 값 : ${result}`); // 5
+        // alert("addNumber = " + addNumber);
+
+    //     let plusNumber = addNumber;
+    //     let result2 = plusNumber(2,3);
+    //     document.write(`두 수를 더 한 값2 : ${result2}`); 
+    //   </script>
+    //   <script>
+    //     (function() {
+    //      let userName = prompt("이름을 입력하세요.");
+    //      document.write(`<p>안녕하세요? <span class="accent">${userName}</span>님!</p>`);
+    //     }());
+    //   </script>
+      
+    //   <script>    
+    //     (function(a, b){   // 함수 선언을 위한 매개변수
+    //       sum = a + b;      
+    //     }(100, 200));       // 마지막에 함수 실행을 위한 인수    
+    //     document.write(`함수 실행 결과 : ${sum}`);
+    //     </script> 
+
+        <script>
+            let sum2 = (a, b) => a + b; // 화살표 함수 arrow function
+            alert("sum2 = " + sum2(1, 2)); // sum = 3
+        </script>
+    <title>function</title>
+</head>
+<body>
+    <h1>function</h1>
+    <button onclick="add(1, 2)">add</button>
+        <input type="number" id="dan" name="dan" readonly>
+        <button onclick="gugudan(5)">gugudan</button>
+</body>
+</html>

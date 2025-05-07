@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 변수</title>
+    <style>
+        
+    </style>
+    <script>
+        v1 = 100; // 전역변수
+        v1 = 200; // 전역변수
+        var v2 = 200; // 로컬변수 메서드 밖에 선언하면 전역변수
+        var v2 = 300; // 로컬변수 메서드 밖에 선언하면 전역변수
+        let v3 = 300;  // 블록변수 자바의 로컬변수느낌
+        v3 = 400;  // 블록변수 자바의 로컬변수느낌
+        const v4 = 400; // 상수
+    </script>
+</head>
+<body>
+    <h1>자바 스크립트 변수</h1>
+    <script>
+        let singers = ['아이유', '지코', '백예린'];
+        console.log(singers);
+        // alert(singers);
+        let a = 'KIM'; 
+        let b = 100;
+        // alert(a + b); // KIM100
+        // alert(a - b); // NaN
+        // alert(a * b); // NaN
+
+        let sum = 0;
+        for (let i = 1; i <= 10; i++) {
+            sum += i;
+        }
+        alert('1부터 10까지의 합은 ' + sum + '입니다.');
+    </script>
+    <script>
+        // 구구단
+        let gugudan = "";
+        for (let i = 2; i <= 9; i++) {
+            gugudan += i + "단\n";
+            for (let j = 1; j <= 9; j++) {
+                gugudan += i + " * " + j + " = " + (i * j) + "\n";
+            }
+            gugudan += "\n";
+        }
+        alert(gugudan);
+    </script>
+</body>
+</html>

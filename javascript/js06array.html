@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>Array</h1>
+    <div id="msg"></div>
+    <script>
+        let arr1 = ['a','b','c'] //new Array();
+        document.querySelector("#msg").innerHTML = ("길이 = "+arr1.length);
+        for(let i=0; i<arr1.length; i++){
+            document.querySelector("#msg").innerHTML += arr1[i];
+        }
+    </script>
+    <hr>
+    <!-- <script>
+        let nums = [1, 2, 3];
+        let chars = ['a', 'b', 'c', 'd'];
+
+        let numsChars = nums.concat(chars);
+        let charsNums = chars.concat(nums);
+        document.write(`nums에 chars 합치면 : ${numsChars}, <br> chars에 nums 합치면  ${charsNums}`);
+        document.write(`<hr>`);
+    </script> -->
+
+<!-- <script>
+    let nums = [1, 2, 3];
+    let chars = ['a', 'b', 'c', 'd'];
+    let string1 = nums.join();
+    document.write(`구분자 없이 : ${string1}<br>`);
+    let string2 = chars.join('-');
+    document.write(`/ 구분자 지정 : ${string2}`);
+    document.write(`<hr>`);
+  </script> -->
+
+  <!-- <script>
+    let nums = [1, 2, 3];
+    let chars = ['a', 'b', 'c', 'd'];
+  
+    let ret1 = nums.push(4, 5);   // 배열 끝에 추가
+    document.write(`length : ${ret1} | 배열 : ${nums}<br>`);
+    let ret2 = nums.unshift(0);   // 배열 앞에 추가
+    document.write(`length : ${ret2}, | 배열 : ${nums}`);
+    document.write(`<hr>`);
+  </script> -->
+
+  <script>
+    // 로또 번호 생성
+    let lottoNums = [];
+    for(let i = 1; i <= 6; i++){
+        let r = Math.floor(Math.random() * 45) + 1;
+        // 중복 체크
+            if(lottoNums.indexOf(r) == -1){
+                lottoNums.push(r);
+            } else {
+                i--; // 중복이므로 다시 뽑기
+            }
+        }
+        // 정렬
+        // lottoNums.sort(); // 오름차순 정렬 (sort는 문자열 정렬)
+        // lottoNums.sort((a,b) => a-b) // 오름차순 정렬 (숫자)
+        lottoNums.sort((a,b) => b-a) // 내림차순 정렬 (숫자)
+        document.write("로또번호 = " + lottoNums.join('-'));
+  </script>
+
+<script>
+    let nums = [1, 2, 3];
+    let chars = ['a', 'b', 'c', 'd'];
+
+    let popped1 = chars.pop();   // 마지막 요소 꺼냄
+    document.write(`꺼낸 요소 : ${popped1}, | 배열 : ${chars}<br>`);
+    let popped2 = chars.shift();   // 첫 번째 요소 꺼냄
+    document.write(`꺼낸 요소 : ${popped2}, | 배열 : ${chars}`);
+    document.write(`<hr>`);
+  </script>
+
+<script>
+    let study = ['html', 'css', 'javascript', 'jquery', 'react', 'nodejs'];
+    
+    // 인수가 1개일 경우
+    let js = study.splice(2);
+    document.write(`반환된 배열 : ${js}<br>` );
+    document.write(`변경된 배열 : ${study}`);
+    document.write(`<hr>`);
+    
+    // 인수가 2개일 경우
+    let jquery = js.splice(1,1);
+    document.write(`반환된 배열 : ${jquery}<br>`);
+    document.write(`변경된 배열 : ${js}`);  
+    document.write(`<hr>`);
+    
+    // 인수가 3개 이상일 경우
+    let modernJs = js.splice(1, 0, 'typescript');
+    document.write(`반환된 배열 : ${modernJs}<br>`);  
+    document.write(`변경된 배열 : ${js}`); 
+  </script>
+
+</body>
+</html>
