@@ -5,6 +5,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Web Programming</title>
 	<link rel="stylesheet" href="css/subject.css">
+  <script>
+    window.onload = function() { // 페이지가 로드되면 실행
+      // alert("페이지가 로드되었습니다.")
+      let btn = document.querySelector("#add_btn")
+      btn.onclick = newRegister // 버튼 클릭 시 newRegister() 함수 실행
+    }
+    function newRegister(event){ 
+      event.preventDefault(); // 기본 동작 방지
+      let ul = document.querySelector("#itemList") // ul 요소 선택
+      let sj = document.querySelector("#subject") // input 요소 선택
+      ul.innerHTML += "<li>" + sj.value + "<button>x</button></li>" // ul에 li 추가
+      sj.value = ""; // input 초기화
+    }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -13,9 +27,9 @@
     <form action="">
       <label for="subject" class="hidden">주제</label>
       <input type="text" id="subject" autofocus>
-      <button>추가</button>
+      <button id="add_btn">추가</button>
     </form>
-    <hr>  
+    <hr> 
     <ul id="itemList"></ul>  
   </div>
 </body>

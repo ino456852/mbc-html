@@ -32,7 +32,15 @@
   
 	<script>
     // Do it! 이벤트 리스너로 이벤트 처리하기
-
+    // #cat 이미지에 마우스를 올리면 kitty-2.png로 변경
+    // 마우스가 이미지에서 벗어나면 kitty-1.png로 변경
+    const cat = document.getElementById('cat');
+    cat.addEventListener('mouseover', function() {
+      cat.setAttribute('src', 'images/kitty-2.png');
+    });
+    cat.addEventListener('mouseout', function() {
+      cat.setAttribute('src', 'images/kitty-1.png');
+    });
 	</script>
 </body>
 </html>

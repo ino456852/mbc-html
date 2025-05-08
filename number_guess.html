@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자맞추기 게임</title>
+    <link rel="stylesheet" href="number_guess.css">
+    <script>
+        let com_num = 0; // 컴퓨터가 생성한 랜덤 숫자
+        window.onload = () => {
+            let start_btn = document.querySelector("#start_game")
+            start_btn.onclick = start_game;
+        }
+        
+        function start_game(){
+            // 게임이 진행중일 때 게임시작 버튼을 눌러도 새로 시작하지 않도록
+            let msg = document.querySelector("#msg")
+            if (com_num != 0){
+                msg.innerHTML = "게임이 진행중입니다!"
+                return;
+            } else {
+                msg.innerHTML = "게임을 시작합니다!"
+            }
+            // 버튼 필드 초기화
+            let field = document.querySelector("#field")
+            field.innerHTML = "";
+            // 1~ 100 사이 의 랜덤 숫자 생성
+            com_num = Math.floor(Math.random() * 100) + 1;
+            make_button_field();    
+        }
+        function make_button_field(){
+            let field = document.querySelector("#field")
+            for(let i = 1; i <= 100; i++){
+                field.innerHTML += "<button onclick='click_number(event)'>"+i+"</button>"
+            }
+        }
+        function click_number(event){
+            let msg = document.querySelector("#msg")
+            msg.innerHTML = event.target.innerHTML;
+            let user_num = parseInt(event.target.innerHTML)
+            if (com_num == user_num){
+                msg.innerHTML = com_num + "! 정답입니다!"
+                // 정답을 맞출경우 다시 시작하도록
+                com_num = 0;
+                let field = document.querySelector("#field")
+                field.innerHTML = "";
+                return;
+            } else if (user_num < 1 || user_num > 100){
+                msg.innerHTML = "1~100 사이의 숫자를 선택하세요!"
+                return;
+            } else if (com_num > user_num){
+                msg.innerHTML = "UP!"
+            } else {
+                msg.innerHTML = "DOWN!"
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>숫자맞추기 게임</h1>
+    <button id="start_game">게임시작</button>
+    <div id="field"></div>
+    <div id="msg"></div>
+</body>
+</html>
